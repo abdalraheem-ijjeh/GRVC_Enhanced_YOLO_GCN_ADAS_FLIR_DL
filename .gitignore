@@ -3,3 +3,7 @@
 /Yolo_GCN_model.keras
 /logs/
 /Comparative_models/models_/research/
+/yolov3.weights
+/Yolo_model.weights.h5
+/trained_models/detection_models/
+/trained_models/yolov3_train_127.keras
