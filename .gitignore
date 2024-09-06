@@ -7,3 +7,14 @@
 /Yolo_model.weights.h5
 /trained_models/detection_models/
 /trained_models/yolov3_train_127.keras
+/Comparative_models/models_/tf_models_architectures/centernet_hg104/
+/Comparative_models/models_/tf_models_architectures/centernet_resnet50_v1_fpn/
+/Comparative_models/models_/tf_models_architectures/efficientdet_d5/
+/Comparative_models/models_/tf_models_architectures/efficientdet_d6/
+/Comparative_models/models_/tf_models_architectures/efficientdet_d7/
+/Comparative_models/models_/tf_models_architectures/faster_rcnn_inception_resnet_v2/
+/Comparative_models/models_/tf_models_architectures/faster_rcnn_resnet50_v1/
+/Comparative_models/models_/tf_models_architectures/faster_rcnn_resnet101_v1/
+/Comparative_models/models_/tf_models_architectures/ssd_mobilenet_v2/
+/Comparative_models/models_/tf_models_architectures/ssd_mobilenet_v2_fpnlite/
+/Comparative_models/models_/tf_models_architectures/ssd_resnet50_v1_fpn/
