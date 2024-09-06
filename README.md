@@ -1,4 +1,4 @@
-# Enhanced YOLO v3 for Person Detection
+# Enhanced deep learning model for Person Detection using thermal IR images
 
 ## Description
 
