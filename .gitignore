@@ -18,3 +18,10 @@
 /Comparative_models/models_/tf_models_architectures/ssd_mobilenet_v2/
 /Comparative_models/models_/tf_models_architectures/ssd_mobilenet_v2_fpnlite/
 /Comparative_models/models_/tf_models_architectures/ssd_resnet50_v1_fpn/
+/dataset/
+/dataset/unused_tfrecords/train_single_class_person.tfrecord
+/dataset/unused_tfrecords/train_single_class_person_center.tfrecord
+/dataset/unused_tfrecords/val_single_class_person.tfrecord
+/dataset/unused_tfrecords/val_single_class_person_center.tfrecord
+/dataset/images_thermal_train_single_class_person.tfrecord
+/dataset/images_thermal_val_single_class_person.tfrecord
