@@ -1,0 +1,35 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Ignore XML files
+*.xml
+
+# Ignore image files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+
+# Ignore video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Ignore NumPy arrays
+*.npy
+*.npz
+
+# Ignore Keras files
+*.keras
+
+# Ignore HDF5 files
+*.h5
+
+# Ignore log files
+*.log
+
+# Ignore Jupyter Notebook files
+*.ipynb
+
