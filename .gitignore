@@ -25,3 +25,10 @@
 /dataset/unused_tfrecords/val_single_class_person_center.tfrecord
 /dataset/images_thermal_train_single_class_person.tfrecord
 /dataset/images_thermal_val_single_class_person.tfrecord
+/DL_Model_parsing_Teledyne_ADAS_FLIR_json.py
+/image_alignment_feature_matching.py
+/initial_thermal_bbox_model.h5
+/loading_processing_annotations.py
+/parsin_annotations.py
+/power_usage_log.csv
+/valid_thermal_images_prediction.py
