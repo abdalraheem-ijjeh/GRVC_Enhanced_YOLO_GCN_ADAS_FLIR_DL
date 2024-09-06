@@ -32,3 +32,5 @@
 /parsin_annotations.py
 /power_usage_log.csv
 /valid_thermal_images_prediction.py
+/models/
+*.npy
