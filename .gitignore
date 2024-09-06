@@ -34,3 +34,6 @@
 /valid_thermal_images_prediction.py
 /models/
 *.npy
+*.iml
+*.ipynb
+*.pyc
