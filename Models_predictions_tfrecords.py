@@ -42,7 +42,7 @@ Requirements:
 
 Example Command:
 ```
-python script.py -m path/to/model -t path/to/tfrecords -t 0.5
+python Models_predictions_tfrecords.py -m path/to/model -t path/to/tfrecords -t 0.5
 ```
 
 """
