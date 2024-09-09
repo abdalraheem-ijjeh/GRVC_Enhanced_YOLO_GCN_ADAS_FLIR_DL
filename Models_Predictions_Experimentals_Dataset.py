@@ -42,7 +42,7 @@ Requirements:
 
 Example Command:
 ```
-python script.py -m path/to/model -d path/to/directory -t 0.5
+python Models_Predictions_Experimentals_Dataset.py -m path/to/model -d path/to/directory -t 0.5
 ```
 
 """
