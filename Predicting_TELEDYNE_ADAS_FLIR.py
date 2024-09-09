@@ -46,7 +46,7 @@ Requirements:
 
 Example Command:
 ```
-python script.py -m path/to/model -t path/to/tfrecords -t 0.5
+python Predicting_TELEDYNE_ADAS_FLIR.py -m path/to/model -t path/to/tfrecords -t 0.5
 ```
 
 """
