@@ -30,7 +30,7 @@ Usage:
 
 Example Command:
 ```python
-python script.py
+python VisTFRecord.py
 ```
 
 Notes:
