@@ -29,7 +29,7 @@ Usage:
 
 Example Command:
 ```python
-python script.py
+python TFRecordCreationCode.py
 ```
 
 Notes:
