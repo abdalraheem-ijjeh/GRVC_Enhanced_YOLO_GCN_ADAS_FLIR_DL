@@ -34,7 +34,7 @@ Usage:
 
 Example Command:
 ```bash
-python script.py
+python Power_Consumption_YOLOV3_GCN.py
 ```
 
 Notes:
