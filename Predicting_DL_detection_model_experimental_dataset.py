@@ -36,7 +36,7 @@ Usage:
 
 Example Command:
 ```python
-python script.py
+python Predicting_DL_detection_model_experimental_dataset.py
 ```
 
 Notes:
