@@ -3,7 +3,7 @@ Author: Abdalraheem A. Ijjeh
 Affiliation: Postdoc researcher / GRVC Robotics Laboratory, University of Seville, 41092 Seville, Spain
 
 Description:
-    This script is used to fine-tune the EfficientDet-D6 model using TensorFlow Object Detection API used for
+    This script is used to fine-tune the Faster R-CNN ResNet50 V1 model using TensorFlow Object Detection API used for
     Person detection in smoky environments.
     It modifies the pipeline configuration for custom dataset paths, sets hyperparameters such as batch size,
     number of epochs, optimizer, and adjusts the loss function weights.
@@ -21,7 +21,7 @@ Usage:
     Execute the script via a Python environment with TensorFlow installed:
 
     ```
-    python train_ssd_mobilenet_v2.py
+    python train_faster_r_cnn_resnet50_v1.py
     ```
 
 Paths:
@@ -48,13 +48,12 @@ from google.protobuf import text_format
 from object_detection.protos import pipeline_pb2
 
 # Paths
-MODEL_DIR = "Comparative_models/models_/tf_models_architectures/efficientdet_d6"
+MODEL_DIR = "Comparative_models/models_/tf_models_architectures/faster_rcnn_resnet50_v1"
 PIPELINE_CONFIG_PATH = "pipeline.config"
-OUTPUT_DIR = "Comparative_models/models_/tf_models_architectures/efficientdet_d6/checkpoint"
+OUTPUT_DIR = "Comparative_models/models_/tf_models_architectures/faster_rcnn_resnet50_v1/checkpoint"
 TFRECORD_PATH = "dataset"  # Update with your TFRecord path
 LABEL_MAP_PATH = "Comparative_models/label_map.pbtxt"
 
-# Checkpoint from the pre-trained model
 # Checkpoint from the pre-trained model
 CHECKPOINT_PATH = os.path.join(MODEL_DIR, "checkpoint")
 
@@ -127,7 +126,6 @@ def train_model():
     dataset paths, and checkpoint paths. Then, the TensorFlow Object Detection
     API's training loop is invoked using the modified pipeline configuration.
     """
-
     # Modify the pipeline configuration
     modify_pipeline_config(PIPELINE_CONFIG_PATH, TFRECORD_PATH, LABEL_MAP_PATH, CHECKPOINT_PATH)
 

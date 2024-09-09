@@ -3,7 +3,7 @@ Author: Abdalraheem A. Ijjeh
 Affiliation: Postdoc researcher / GRVC Robotics Laboratory, University of Seville, 41092 Seville, Spain
 
 Description:
-    This script is used to fine-tune the EfficientDet-D7 model using TensorFlow Object Detection API used for
+    This script is used to fine-tune the EfficientDet-D5 model using TensorFlow Object Detection API used for
     Person detection in smoky environments.
     It modifies the pipeline configuration for custom dataset paths, sets hyperparameters such as batch size,
     number of epochs, optimizer, and adjusts the loss function weights.
@@ -21,7 +21,7 @@ Usage:
     Execute the script via a Python environment with TensorFlow installed:
 
     ```
-    python train_ssd_mobilenet_v2.py
+    python train_efficientDet_D5.py
     ```
 
 Paths:
@@ -48,9 +48,9 @@ from google.protobuf import text_format
 from object_detection.protos import pipeline_pb2
 
 # Paths
-MODEL_DIR = "Comparative_models/models_/tf_models_architectures/efficientdet_d7"
+MODEL_DIR = "Comparative_models/models_/tf_models_architectures/efficientdet_d5"
 PIPELINE_CONFIG_PATH = "pipeline.config"
-OUTPUT_DIR = "Comparative_models/models_/tf_models_architectures/efficientdet_d7/checkpoint"
+OUTPUT_DIR = "Comparative_models/models_/tf_models_architectures/efficientdet_d5/checkpoint"
 TFRECORD_PATH = "dataset"  # Update with your TFRecord path
 LABEL_MAP_PATH = "Comparative_models/label_map.pbtxt"
 

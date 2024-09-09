@@ -3,7 +3,7 @@ Author: Abdalraheem A. Ijjeh
 Affiliation: Postdoc researcher / GRVC Robotics Laboratory, University of Seville, 41092 Seville, Spain
 
 Description:
-    This script is used to fine-tune the SSD ResNet50 v1 model using TensorFlow Object Detection API used for
+    This script is used to fine-tune the Faster R-CNN Inception ResNet V2 model using TensorFlow Object Detection API used for
     Person detection in smoky environments.
     It modifies the pipeline configuration for custom dataset paths, sets hyperparameters such as batch size,
     number of epochs, optimizer, and adjusts the loss function weights.
@@ -21,7 +21,7 @@ Usage:
     Execute the script via a Python environment with TensorFlow installed:
 
     ```
-    python train_ssd_mobilenet_v2.py
+    python train_faster_r_cnn_inception_resnet_v2.py
     ```
 
 Paths:
@@ -48,14 +48,23 @@ from google.protobuf import text_format
 from object_detection.protos import pipeline_pb2
 
 # Paths
-MODEL_DIR = "Comparative_models/models_/tf_models_architectures/ssd_resnet50_v1_fpn"
+MODEL_DIR = "Comparative_models/models_/tf_models_architectures/faster_rcnn_inception_resnet_v2"
 PIPELINE_CONFIG_PATH = "pipeline.config"
-OUTPUT_DIR = "Comparative_models/models_/tf_models_architectures/ssd_resnet50_v1_fpn/checkpoint"
-TFRECORD_PATH = "dataset"
+OUTPUT_DIR = "Comparative_models/models_/tf_models_architectures/faster_rcnn_inception_resnet_v2/checkpoint"
+TFRECORD_PATH = "dataset"  # Update with your TFRecord path
 LABEL_MAP_PATH = "Comparative_models/label_map.pbtxt"
 
 # Checkpoint from the pre-trained model
 CHECKPOINT_PATH = os.path.join(MODEL_DIR, "checkpoint")
+
+# Hyperparameters
+BATCH_SIZE = 32
+NUM_EPOCHS = 10
+NUM_TRAINING_SAMPLES = 10000  # Update this with the actual number of training samples
+
+# Calculate the number of steps per epoch and total steps
+steps_per_epoch = NUM_TRAINING_SAMPLES // BATCH_SIZE
+total_steps = steps_per_epoch * NUM_EPOCHS
 
 
 # Modify the pipeline configuration to match your dataset
@@ -89,15 +98,16 @@ def modify_pipeline_config(config_path, tfrecord_path, label_map_path, checkpoin
         os.path.join(tfrecord_path, "images_thermal_val_single_class_person.tfrecord")]
     pipeline_config.eval_input_reader[0].label_map_path = label_map_path
 
-    # Set batch size, optimizer, and training steps
-    pipeline_config.train_config.batch_size = 32  # Batch size
-    pipeline_config.train_config.num_steps = 1000  # Training steps (epochs equivalent)
+    # Set batch size
+    pipeline_config.train_config.batch_size = BATCH_SIZE
 
-    # Optimizer (Momentum)
-    pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.constant_learning_rate.learning_rate = 0.001
-    pipeline_config.train_config.optimizer.momentum_optimizer.momentum_optimizer_value = 0.9
+    # Set training steps (for epochs)
+    pipeline_config.train_config.num_steps = total_steps
 
-    # Loss function adjustments (weight for classification and localization loss)
+    # Set optimizer (Adam)
+    pipeline_config.train_config.optimizer.adam_optimizer.learning_rate.constant_learning_rate.learning_rate = 0.001
+
+    # Adjust the loss function parameters
     pipeline_config.model.ssd.loss.classification_loss.weight = 1.0
     pipeline_config.model.ssd.loss.localization_loss.weight = 1.0
 
@@ -123,7 +133,7 @@ def train_model():
     model_lib.train_loop(
         pipeline_config_path=os.path.join(OUTPUT_DIR, 'pipeline.config'),
         model_dir=OUTPUT_DIR,
-        train_steps=None,  # Train indefinitely until manually stopped
+        train_steps=total_steps,  # Total number of training steps
         use_tpu=False
     )
 
