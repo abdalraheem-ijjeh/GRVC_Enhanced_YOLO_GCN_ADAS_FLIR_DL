@@ -34,7 +34,7 @@ Usage:
 
 Example Command:
 ```bash
-python script.py --size 416 --epochs 1000 --batch_size 4 --num_classes 1 --classes model_data/adas_flir_classes.txt --anchors model_data/yolov3_anchors.txt --train_dataset dataset/images_thermal_train_single_class_person.tfrecord --val_dataset dataset/images_thermal_val_single_class_person.tfrecord --output model_data/yolov3.keras
+python yolo_GCN_TELEDYNE.py --size 416 --epochs 1000 --batch_size 4 --num_classes 1 --classes model_data/adas_flir_classes.txt --anchors model_data/yolov3_anchors.txt --train_dataset dataset/images_thermal_train_single_class_person.tfrecord --val_dataset dataset/images_thermal_val_single_class_person.tfrecord --output model_data/yolov3.keras
 ```
 
 Notes:
